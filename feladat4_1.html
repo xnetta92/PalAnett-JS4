@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS4_1feladat</title>
+</head>
+
+<body>
+    <h1>Szöveg Átalakító</h1>
+    <div>
+        <label for="szoveg">Írj be egy szöveget:</label>
+        <input type="text" id="szoveg"><br>
+    </div>
+    <div>
+        <p>Válaszd ki az átalakítás típusát:</p>
+        <input type="radio" id="kisbetus" name="atalakit" value="kisbetus">
+        <label for="kisbetus">Kisbetűs</label><br>
+        <input type="radio" id="nagybetus" name="atalakit" value="nagybetus">
+        <label for="nagybetus">Nagybetűs</label><br>
+    </div>
+    <br>
+    <button onclick="atalakit()">Átalakítás</button>
+
+    <p id="eredmeny"></p>
+
+    <script>
+        function atalakit() {
+            const szovegInput = document.getElementById('szoveg');
+            const eredmenyDiv = document.getElementById('eredmeny');
+            const atalakitasRadio = document.querySelector('input[name="atalakit"]:checked');
+
+            const szoveg = szovegInput.value;
+
+            if (!szoveg || !atalakitasRadio) {
+                alert('Kérem, töltse ki a szövegmezőt, és válasszon átalakítási típust!');
+                return;
+            }
+
+            const atalakitottSzoveg = atalakitasRadio.value === 'kisbetus' ? szoveg.toLowerCase() : szoveg.toUpperCase();
+
+            eredmenyDiv.textContent = 'Eredmény: ' + atalakitottSzoveg;
+        }
+    </script>
+</body>
+
+</html>

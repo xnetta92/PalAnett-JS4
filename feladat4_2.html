@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS4_2feladat</title>
+    <script src="feladat4_2.js"></script>
+</head>
+<body>
+    <h1>Regisztrációs űrlap</h1>
+
+    <form action="feladat4_2.html" method="post" name="regisztracios_urlap">
+        <div>
+            <label for="fnev">Felhasználó név:</label>
+            <input type="text" name="fnev" id="fnev" minlength="5" maxlength="16" placeholder="5 és 16 közötti karakter">
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="E-mail">
+        </div>
+        <div>
+            <label for="pass">Jelszó:</label>
+            <input type="password" id="pass" name="pass" placeholder="min 5 karakter" minlength="5">
+        </div>
+        <div>
+            <label for="confirm_password">Jelszó:</label>
+            <input oninput="compare()" type="password" id="confirm_password" name="confirm_password" placeholder="min 5 karakter" minlength="5">
+            <span id='message'></span>
+        </div>
+        <div>
+            <label for="birthdate">Születési idő:</label>
+            <input  type="date" id="birthdate" name="birthdate">
+        </div>
+
+        <button type="submit">Regisztráció</button>
+    </form>
+    
+</body>
+</html>

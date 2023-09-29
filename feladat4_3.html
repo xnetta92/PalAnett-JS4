@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS4_3feladat</title>
     <script src="feladat4_3.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <style>
+        body {
+            background-image: url(./space.jpg);
+            background-size: fill;
+        }
         form>div {
             margin: 4px;
         }
@@ -14,60 +23,65 @@
 </head>
 
 <body>
-    <h1>UFO-t észleltem űrlap!</h1>
+    <div class="card mt-4 m-auto shadow" style="width: 60%;">
+        <div class="card-header bg-primary">
+            <h1 class="h1 text-light">UFO-t észleltem űrlap!</h1>
+        </div>
+        <div class="form-group card-body">
+            <form action="feladat4_3.html" method="post" name="ufo_urlap">
+                <div>
+                    <label for="uname">Név:</label>
+                    <input class="form-control" type="text" name="uname" id="uname" minlength="4"
+                        placeholder="Kérek egy nevet">
+                </div>
+                <div>
+                    <label for="datetime">Észlelés ideje:</label>
+                    <input class="form-control" type="datetime-local" name="datetime" id="datetime">
+                </div>
+                <div>
+                    <label for="location">Észlelés helyszíne:</label>
+                    <select class="form-select" id="location" name="location">
+                        <option value="" selected disabled>Észlelés helye</option>
+                        <option value="north-america">Észak Amerika</option>
+                        <option value="south-america">Dél Amerika</option>
+                        <option value="europe">Európa</option>
+                        <option value="africa">Afrika</option>
+                        <option value="asia">Ázsia</option>
+                        <option value="australia">Ausztrália</option>
+                        <option value="antarctica">Antarktisz</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="type">Találkozás típusa:</label>
 
-    <div>
-        <form action="feladat4_3.html" method="post" name="ufo_urlap">
-            <div>
-                <label for="uname">Név:</label>
-                <input type="text" name="uname" id="uname" minlength="4" placeholder="A neved kell">
-            </div>
-            <div>
-                <label for="datetime">Észlelés ideje:</label>
-                <input type="datetime-local" name="datetime" id="datetime">
-            </div>
-            <div>
-                <label for="location">Észlelés helyszíne:</label>
-                <select id="location" name="location">
-                    <option value="" selected disabled>Észlelés helye</option>
-                    <option value="north-america">Észak Amerika</option>
-                    <option value="south-america">Dél Amerika</option>
-                    <option value="europe">Európa</option>
-                    <option value="africa">Afrika</option>
-                    <option value="asia">Ázsia</option>
-                    <option value="australia">Ausztrália</option>
-                    <option value="antarctica">Antarktisz</option>
-                </select>
-            </div>
-            <div>
-                <label for="type">Találkozás típusa:</label>
-                    
-                <ul>
-                <li> 
-                    <input type="radio" id="type" name="type">
-                    <label for="">I. egyes típusú</label>
-                </li>
-                <li>
-                    <input type="radio" id="type" name="type">
-                    <label for="">II. kettes típusú</label>
-                </li>
-                <li>
-                    <input type="radio" id="type" name="type">
-                    <label for="">III. harmadik típusú</label>
-                </li>
-            </ul>
-            </div>
-            <div>
-                <label for="text">Leíras:</label>
-                <textarea name="textarea" rows="5" cols="40">Írj pár sort az eseményről</textarea>
-            </div>
-            <div>
-                <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" placeholder="E-mail">
-            </div>
+                    <ul>
+                        <li class="form-check form-inline">
+                            <input class="form-check-input" type="radio" id="type" name="type">
+                            <label class="form-check-label" for="">I. egyes típusú</label>
+                        </li>
+                        <li class="form-check form-inline">
+                            <input class="form-check-input" type="radio" id="type" name="type">
+                            <label class="form-check-label" for="">II. kettes típusú</label>
+                        </li>
+                        <li class="form-check form-inline">
+                            <input class="form-check-input" type="radio" id="type" name="type">
+                            <label class="form-check-label" for="">III. harmadik típusú</label>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <label for="text">Leíras:</label>
+                    <textarea class="form-control" name="textarea" rows="5"
+                        cols="40">Írj pár sort az eseményről</textarea>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Kérek egy emailt!">
+                </div>
 
-            <button type="submit">Küldés</button>
-        </form>
+                <button class="btn btn-primary" type="submit">Küldés</button>
+            </form>
+        </div>
     </div>
 
 </body>

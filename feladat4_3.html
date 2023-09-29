@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS4_3feladat</title>
+    <script src="feladat4_3.js"></script>
+    <style>
+        form>div {
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>UFO-t észleltem űrlap!</h1>
+
+    <div>
+        <form action="feladat4_3.html" method="post" name="ufo_urlap">
+            <div>
+                <label for="uname">Név:</label>
+                <input type="text" name="uname" id="uname" minlength="4" placeholder="A neved kell">
+            </div>
+            <div>
+                <label for="datetime">Észlelés ideje:</label>
+                <input type="datetime-local" name="datetime" id="datetime">
+            </div>
+            <div>
+                <label for="location">Észlelés helyszíne:</label>
+                <select id="location" name="location">
+                    <option value="" selected disabled>Észlelés helye</option>
+                    <option value="north-america">Észak Amerika</option>
+                    <option value="south-america">Dél Amerika</option>
+                    <option value="europe">Európa</option>
+                    <option value="africa">Afrika</option>
+                    <option value="asia">Ázsia</option>
+                    <option value="australia">Ausztrália</option>
+                    <option value="antarctica">Antarktisz</option>
+                </select>
+            </div>
+            <div>
+                <label for="type">Találkozás típusa:</label>
+                    
+                <ul>
+                <li> 
+                    <input type="radio" id="type" name="type">
+                    <label for="">I. egyes típusú</label>
+                </li>
+                <li>
+                    <input type="radio" id="type" name="type">
+                    <label for="">II. kettes típusú</label>
+                </li>
+                <li>
+                    <input type="radio" id="type" name="type">
+                    <label for="">III. harmadik típusú</label>
+                </li>
+            </ul>
+            </div>
+            <div>
+                <label for="text">Leíras:</label>
+                <textarea name="textarea" rows="5" cols="40">Írj pár sort az eseményről</textarea>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" placeholder="E-mail">
+            </div>
+
+            <button type="submit">Küldés</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
